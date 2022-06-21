@@ -7,11 +7,11 @@ import com.lrbresca.domain.Location
  * This class is in charge of make the local persistence
  */
 class InMemoryLocationPersistenceSource : LocationPersistenceSource {
-    private var locations: List<Location> = emptyList()
+    private var locations: MutableList<Location> = mutableListOf()
 
     override fun getPersistedLocations(): List<Location> = locations
 
     override fun saveNewLocation(location: Location) {
-        locations += location
+        locations.add(location)
     }
 }
